@@ -1,0 +1,7 @@
+---
+# defaults file for nut-client
+notifynut_method: mail #mail|pushbullet
+notifynut_mailto: root
+nut_mode: netclient
+
+nut_ups_port: 3493

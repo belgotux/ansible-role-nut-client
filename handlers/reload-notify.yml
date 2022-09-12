@@ -1,0 +1,6 @@
+- name: reload systemd for nut-notify-boot
+  systemd:
+    name: nut-notify-boot
+    # state: started
+    daemon_reload: yes
+    enabled: yes

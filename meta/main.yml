@@ -1,0 +1,21 @@
+galaxy_info:
+  role_name: nut_client
+  author: belgotux
+  description: Role to install nut client to monitor a remote nut-server
+  license: GPL-3.0-or-later
+
+  min_ansible_version: "2.1"
+
+  platforms:
+  - name: Debian
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+
+  galaxy_tags: 
+  - nut
+  - pushbullet
+
+dependencies: []

@@ -1,0 +1,25 @@
+- name: copy config file
+  template:
+    src: upsmon.conf.j2
+    dest: /etc/nut/upsmon.conf
+    owner: nut
+    group: nut
+    mode: 0644
+  notify:
+  - restart nut daemon
+- name: "copy scripts"
+  copy:
+    src: nutNotify/{{item}}
+    dest: /usr/local/bin/{{item|basename}}
+    owner: root
+    group: root
+    mode: 0755
+  loop: [nutShutdown.sh,nutNotify.sh,nutNotify.conf,nutNotifyBoot.sh]
+
+- name: Ensure log folder is present
+  file:
+    path: "/var/log/nutNotify"
+    owner: "nut"
+    group: "nut"
+    mode: 0775
+    state: directory

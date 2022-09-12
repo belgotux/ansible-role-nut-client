@@ -1,0 +1,10 @@
+---
+# vars file for nut-client
+# notifynut_method: pushbullet
+# notifynut_mailto: root
+
+# nut_ups_name: myups
+# nut_ups_ip: 192.168.1.5
+# nut_ups_port: 3493
+# nut_user: nut
+# nut_password: yourpassword

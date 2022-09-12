@@ -1,0 +1,11 @@
+- name: Install package
+  apt:
+    pkg:
+      - nut-client
+    state: latest
+    update_cache: yes
+- name: change nut mode
+  lineinfile:
+    path: /etc/nut/nut.conf
+    regexp: '^MODE='
+    line: MODE={{nut_mode}}

@@ -1,0 +1,3 @@
+- import_tasks: install-nut-client.yml
+- import_tasks: configure-nut-client.yml
+- import_tasks: systemd.yml
