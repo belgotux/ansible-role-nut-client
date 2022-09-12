@@ -1,16 +1,18 @@
 - name: create systemd boot service
-  copy:
-    src: nutNotify/systemd-notify
+  get_url:
+    url: "https://raw.githubusercontent.com/belgotux/nutNotify/master/systemd-notify"
     dest: /lib/systemd/system/nut-notify-boot.service
-    #validate: sed -e 's/ExecStart=.*/ExecStart=\/usr\/local\/bin\/nutNotifyBoot\.sh {{notifynut_method}}/' %s
-
-- name: copy nutNotifyBoot.sh
-  copy:
-    src: nutNotify/nutNotifyBoot.sh
-    dest: /usr/local/bin/nutNotifyBoot.sh
     owner: root
     group: root
-    mode: 0755
+    mode: 0644
+
+# - name: copy nutNotifyBoot.sh
+#   copy:
+#     src: nutNotify/nutNotifyBoot.sh
+#     dest: /usr/local/bin/nutNotifyBoot.sh
+#     owner: root
+#     group: root
+#     mode: 0755
 - name: replace default notifynut_method
   lineinfile:
     dest: /lib/systemd/system/nut-notify-boot.service
@@ -21,4 +23,4 @@
     dest: /usr/local/bin/nutNotifyBoot.sh
     regexp: "^MAILTO"
     line: MAILTO={{notifynut_mailto}}
-    # attention que la tache de copie de fichier se repete vu que c'est pas un template....
+    # this part always modify the script copy first... Need to fix

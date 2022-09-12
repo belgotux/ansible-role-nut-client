@@ -7,16 +7,35 @@
     mode: 0644
   notify:
   - restart nut daemon
-- name: "copy scripts"
-  copy:
-    src: nutNotify/{{item}}
+
+- name: "get last scripts version"
+  get_url:
+    url: "{{item}}"
     dest: /usr/local/bin/{{item|basename}}
     owner: root
     group: root
     mode: 0755
-  loop: [nutShutdown.sh,nutNotify.sh,nutNotify.conf,nutNotifyBoot.sh]
+  loop: 
+    - https://raw.githubusercontent.com/belgotux/nutNotify/master/nutShutdown.sh
+    - https://raw.githubusercontent.com/belgotux/nutNotify/master/nutNotify.sh
+    - https://raw.githubusercontent.com/belgotux/nutNotify/master/nutNotifyBoot.sh
+    - https://raw.githubusercontent.com/belgotux/pushbullet-notification-linux/master/pushbullet.sh
 
-- name: Ensure log folder is present
+
+- name: link to download config file
+  debug:
+    msg: "Please take conf file from https://github.com/belgotux/pushbullet-notification-linux/blob/master/pushbullet.conf.example and https://github.com/belgotux/nutNotify/blob/master/nutNotify.conf.txt"
+
+- name: "copy config"
+  copy:
+    src: "{{item}}"
+    dest: /usr/local/bin/{{item|basename}}
+    owner: root
+    group: root
+    mode: 0755
+  loop: [nutNotify/nutNotify.conf,pushbullet-notification-linux/pushbullet.conf]
+
+- name: Create log folder
   file:
     path: "/var/log/nutNotify"
     owner: "nut"

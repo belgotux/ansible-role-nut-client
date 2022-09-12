@@ -2,11 +2,7 @@ nut-client
 ==========
 
 Role to install nut client to monitor a remote nut-server for local-server
-
-
-
-Dependances:
-Theses 2 scripts :
+Also install this scripts as dependances : 
 - [nutNotify](https://github.com/belgotux/nutNotify)
 - [pushbullet-notification-linux](https://github.com/belgotux/pushbullet-notification-linux)
 
