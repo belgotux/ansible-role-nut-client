@@ -1,6 +1,6 @@
 ---
 # defaults file for nut-client
-notifynut_method: mail #mail|pushbullet
+notifynut_method: mail #mail|pushbullet|telegram
 notifynut_mailto: root
 nut_mode: netclient
 

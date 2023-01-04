@@ -19,21 +19,20 @@
     - https://raw.githubusercontent.com/belgotux/nutNotify/master/nutShutdown.sh
     - https://raw.githubusercontent.com/belgotux/nutNotify/master/nutNotify.sh
     - https://raw.githubusercontent.com/belgotux/nutNotify/master/nutNotifyBoot.sh
-    - https://raw.githubusercontent.com/belgotux/pushbullet-notification-linux/master/pushbullet.sh
 
 
 - name: link to download config file
   debug:
-    msg: "Please take conf file from https://github.com/belgotux/pushbullet-notification-linux/blob/master/pushbullet.conf.example and https://github.com/belgotux/nutNotify/blob/master/nutNotify.conf.txt"
+    msg: "Please take conf file https://github.com/belgotux/nutNotify/blob/master/nutNotify.conf.txt"
 
 - name: "copy config"
   copy:
     src: "{{item}}"
-    dest: /usr/local/bin/{{item|basename}}
+    dest: /usr/local/etc/{{item|basename}}
     owner: root
     group: root
     mode: 0755
-  loop: [nutNotify/nutNotify.conf,pushbullet-notification-linux/pushbullet.conf]
+  loop: [nutNotify/nutNotify.conf]
 
 - name: Create log folder
   file:

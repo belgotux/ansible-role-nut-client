@@ -26,4 +26,4 @@
     regexp: "^MAILTO"
     line: MAILTO={{notifynut_mailto}}
   notify: reload systemd for nut-notify-boot
-    # this part always modify the script copy first... Need to fix
+    # this part always modify the script copy first... Need to fix using template not github

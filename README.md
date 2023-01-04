@@ -5,14 +5,19 @@ Role to install nut client to monitor a remote nut-server for local-server
 Also install this scripts as dependances : 
 - [nutNotify](https://github.com/belgotux/nutNotify)
 - [pushbullet-notification-linux](https://github.com/belgotux/pushbullet-notification-linux)
+- [telegram-notification-linux](https://github.com/belgotux/telegram-notification-linux)
 
+
+Role dependancies
+-----------------
+- [belgotux.notification_push](https://galaxy.ansible.com/belgotux/notification_push) ([github](https://github.com/belgotux/ansible-role-notification-push))
 
 Role Variables
 --------------
 The role can work as it with the [default configuration](defaults/main.yml).
 
 ### Needed
-- `notifynut_method` can be [mail|pushbullet] (default mail)
+- `notifynut_method` can be [mail|pushbullet|telegram] (default mail)
 - `notifynut_mailto` mail adresse or alias to send notification (default root)
 - `nut_mode` can be [netclient|netserver] netserver is for the server that is attach to UPS by USB for IP card (default netclient)
 - `nut_ups_name` your ups name
