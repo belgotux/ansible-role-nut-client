@@ -2,15 +2,13 @@ nut-client
 ==========
 
 Role to install nut client to monitor a remote nut-server for local-server
-Also install this scripts as dependances : 
+Also install this script as dependance : 
 - [nutNotify](https://github.com/belgotux/nutNotify)
-- [pushbullet-notification-linux](https://github.com/belgotux/pushbullet-notification-linux)
-- [telegram-notification-linux](https://github.com/belgotux/telegram-notification-linux)
 
 
 Role dependancies
 -----------------
-- [belgotux.notification_push](https://galaxy.ansible.com/belgotux/notification_push) ([github](https://github.com/belgotux/ansible-role-notification-push))
+No need dependancies anymore 
 
 Role Variables
 --------------

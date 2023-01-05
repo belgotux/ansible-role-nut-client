@@ -19,12 +19,14 @@
     - https://raw.githubusercontent.com/belgotux/nutNotify/master/nutShutdown.sh
     - https://raw.githubusercontent.com/belgotux/nutNotify/master/nutNotify.sh
     - https://raw.githubusercontent.com/belgotux/nutNotify/master/nutNotifyBoot.sh
+    - https://raw.githubusercontent.com/belgotux/nutNotify/master/nutNotifyFct.sh
 
 
 - name: link to download config file
   debug:
-    msg: "Please take conf file https://github.com/belgotux/nutNotify/blob/master/nutNotify.conf.txt"
+    msg: "Please take last conf file example to put in 'files/nutNotify/nutNotify.conf' folder https://github.com/belgotux/nutNotify/blob/master/nutNotify.conf.txt"
 
+# TODO lazy need to do template file and vars
 - name: "copy config"
   copy:
     src: "{{item}}"
