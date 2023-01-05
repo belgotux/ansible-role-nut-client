@@ -39,7 +39,15 @@
 - name: Create log folder
   file:
     path: "/var/log/nutNotify"
-    owner: "nut"
-    group: "nut"
+    owner: nut
+    group: root
     mode: 0775
     state: directory
+
+- name: Copy logrotate file
+  get_url:
+    url: https://raw.githubusercontent.com/belgotux/nutNotify/master/nutNotify.logrotate
+    dest: /etc/logrotate.d/nutNotify
+    owner: root
+    group: root
+    mode: 0644
