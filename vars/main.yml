@@ -8,3 +8,16 @@
 # nut_ups_port: 3493
 # nut_user: nut
 # nut_password: yourpassword
+
+# notifynut_mailfrom: ""
+# notifynut_mailto: ""
+
+# notifynut_sms_provider: "jumblo.com"
+# notifynut_sms_username:
+# notifynut_sms_password:
+# notifynut_sms_number: +32xxxxxxxx
+
+# notifynut_pushbullet_accessToken: o.xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# notifynut_telegram_accessToken: 
+# notifynut_telegram_chatID: 

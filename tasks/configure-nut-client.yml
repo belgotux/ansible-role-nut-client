@@ -22,19 +22,13 @@
     - https://raw.githubusercontent.com/belgotux/nutNotify/master/nutNotifyFct.sh
 
 
-- name: link to download config file
-  debug:
-    msg: "Please take last conf file example to put in 'files/nutNotify/nutNotify.conf' folder https://github.com/belgotux/nutNotify/blob/master/nutNotify.conf.txt"
-
-# TODO lazy need to do template file and vars
-- name: "copy config"
-  copy:
-    src: "{{item}}"
-    dest: /usr/local/etc/{{item|basename}}
+- name: Copy nutNotify config file
+  template:
+    src: nutNotify.conf.j2
+    dest: /usr/local/etc/nutNotify.conf
     owner: root
     group: root
-    mode: 0755
-  loop: [nutNotify/nutNotify.conf]
+    mode: 0644
 
 - name: Create log folder
   file:

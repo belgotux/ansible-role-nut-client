@@ -5,3 +5,18 @@ notifynut_mailto: root
 nut_mode: netclient
 
 nut_ups_port: 3493
+
+# nutNotify
+notifynut_logfile: /var/log/nutNotify/nutNotify.log
+notifynut_flagfile: /var/log/nutNotify/nutShutdown.flag
+notifynut_curlBin: /usr/bin/curl
+notifynut_mailBin: /usr/bin/mail
+
+notifynut_subjectDefault: "$HOSTNAME UPS event $argument on $ups@$server !"
+notifynut_bodyDefault: "UPS event $argument on $ups at $(date +'%d-%m-%y %H:%M:%S')"
+
+notifynut_pushbullet_providerApi: "https://api.pushbullet.com/v2/pushes"
+notifynut_pushbullet_subject: "UPS event $argument"
+
+notifynut_telegram_providerApi: "https://api.telegram.org"
+notifynut_telegram_subject: "UPS event $argument"

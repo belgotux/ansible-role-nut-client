@@ -1,0 +1,39 @@
+##################################
+# configuration for nutNotify.sh #
+#                                #
+##################################
+
+logfile={{notifynut_logfile}}
+flagfile={{notifynut_flagfile}}
+curlBin={{notifynut_curlBin}}
+mailBin={{notifynut_mailBin}}
+
+subjectDefault="{{notifynut_subjectDefault}}"		#default subject
+bodyDefault="{{notifynut_bodyDefault}}" # default body message
+
+#--- Data for mail ---#
+FROM="{{notifynut_mailfrom}}"			#sender
+MAILTO="{{notifynut_mailto}}"			#recipient(s)
+subjectMail="$subjectDefault"	  	#subject sent by mail
+textMail="$bodyDefault"						#body message sent by mail
+
+#--- Data for SMS ---#
+providerSms={{notifynut_sms_provider}}  	#Betamax/Dellmont provider with sms API
+usernameSms="{{notifynut_sms_username}}"  #username
+passwordSms="{{notifynut_sms_password}}"	#password
+fromSms=$usernameSms											#from a mobile number configure into your Batamax/dellmont account or your username
+toSms={{notifynut_sms_number}}						#the mobile number to send to
+textSms="$bodyDefault"										#body message to send by SMS
+
+#--- Data for pushBullet ---#
+pushbulletProviderApi='{{notifynut_pushbullet_providerApi}}'
+pushbulletAccessToken='{{notifynut_pushbullet_accessToken}}'
+pushbulletSubject="{{notifynut_pushbullet_subject}}"
+pushbulletMessage="$bodyDefault"					#body message sent by pushBullet
+
+#--- Data for telegram ---#
+telegramProviderApi='{{notifynut_telegram_providerApi}}'
+telegramAccessToken='{{notifynut_telegram_accessToken}}'
+telegramChatID='{{notifynut_telegram_chatID}}'
+telegramSubject="{{notifynut_telegram_subject}}"
+telegramMessage="$bodyDefault"						#body message sent by telegram
