@@ -37,3 +37,10 @@ telegramAccessToken='{{notifynut_telegram_accessToken}}'
 telegramChatID='{{notifynut_telegram_chatID}}'
 telegramSubject="{{notifynut_telegram_subject}}"
 telegramMessage="$bodyDefault"						#body message sent by telegram
+
+#--- Data for Pushover ---#
+pushoverProviderApi='{{notifynut_pushover_providerApi}}'
+pushoverAppToken='{{notifynut_pushover_appToken if notifynut_pushover_appToken is defined}}'
+pushoverUserkey='{{notifynut_pushover_userkey if notifynut_pushover_appToken is defined}}'
+pushoverSubject="{{notifynut_pushover_subject}}"
+pushoverMessage="$bodyDefault"						#body message sent by Pushover

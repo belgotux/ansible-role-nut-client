@@ -46,6 +46,10 @@ The role can work as it with the [default configuration](defaults/main.yml).
 - `notifynut_telegram_chatID` Telegram chat ID
 - `notifynut_telegram_providerApi` Telegram API to change if you use your own server (default `"https://api.telegram.org"`)
 - `notifynut_telegram_subject` Short subject for pushbullet (default `"UPS event $argument"`)
+- `notifynut_pushover_appToken` Pushover Application token
+- `notifynut_pushover_userkey` Pushover User key
+- `notifynut_pushover_providerApi` Provider API (default `"https://api.pushover.net/1/messages.json"`)
+- `notifynut_pushover_subject` Short subject for pushover (default `"UPS event $argument"`)
 
 
 Example Playbook

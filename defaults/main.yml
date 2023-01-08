@@ -20,3 +20,6 @@ notifynut_pushbullet_subject: "UPS event $argument"
 
 notifynut_telegram_providerApi: "https://api.telegram.org"
 notifynut_telegram_subject: "UPS event $argument"
+
+notifynut_pushover_providerApi: "https://api.pushover.net/1/messages.json"
+notifynut_pushover_subject: "UPS event $argument"
