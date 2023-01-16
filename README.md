@@ -15,7 +15,7 @@ Role Variables
 The role can work as it with the [default configuration](defaults/main.yml).
 
 ## Needed
-- `notifynut_method` can be [mail|pushbullet|telegram] (default mail)
+- `notifynut_method` can be [mail|pushbullet|telegram|pushover|sms] (default `mail`)
 - `notifynut_mailto` mail adresse or alias to send notification (default root)
 - `nut_mode` can be [netclient|netserver] netserver is for the server that is attach to UPS by USB for IP card (default netclient)
 - `nut_ups_name` your ups name
@@ -51,6 +51,15 @@ The role can work as it with the [default configuration](defaults/main.yml).
 - `notifynut_pushover_providerApi` Provider API (default `"https://api.pushover.net/1/messages.json"`)
 - `notifynut_pushover_subject` Short subject for pushover (default `"UPS event $argument"`)
 
+### Doing different notification method in case of event
+- `notifynut_method_online` one method or a list of method in this format `(telegram mail)` (default same value of `$methodDefault`)
+- `notifynut_method_onbatt` idem
+- `notifynut_method_lowbatt` idem
+- `notifynut_method_fsd` idem
+- `notifynut_method_shutdown` idem
+- `notifynut_method_comm` idem
+- `notifynut_method_serveronline` idem
+
 
 Example Playbook
 ----------------
@@ -66,6 +75,10 @@ Example Playbook
         nut_mode: netclient
         notifynut_method: pushbullet
         notifynut_pushbullet_accessToken: o.xxxxx
+        #if you don't want notification from clients i.e.
+        notifynut_method: none
+        notifynut_method_comm: telegram
+        notifynut_method_serveronline: mail
 ```
 
 ### For the ups server :
@@ -82,6 +95,9 @@ Example Playbook
         notifynut_mailto: "your@mail.tld"
         notifynut_telegram_accessToken: xxx
         notifynut_telegram_chatID: xxx
+        # all notifications for the server and special for online i.e.
+        notifynut_method: telegram
+        notifynut_method_online: (telegram mail)
 ```
 
 

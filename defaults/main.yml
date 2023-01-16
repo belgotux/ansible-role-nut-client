@@ -1,6 +1,5 @@
 ---
 # defaults file for nut-client
-notifynut_method: mail #mail|pushbullet|telegram
 notifynut_mailto: root
 nut_mode: netclient
 
@@ -11,6 +10,15 @@ notifynut_logfile: /var/log/nutNotify/nutNotify.log
 notifynut_flagfile: /var/log/nutNotify/nutShutdown.flag
 notifynut_curlBin: /usr/bin/curl
 notifynut_mailBin: /usr/bin/mail
+
+notifynut_method: mail
+notifynut_method_online: '$methodDefault'
+notifynut_method_onbatt: '$methodDefault'
+notifynut_method_lowbatt: '$methodDefault'
+notifynut_method_fsd: '$methodDefault'
+notifynut_method_shutdown: '$methodDefault'
+notifynut_method_comm: '$methodDefault'
+notifynut_method_serveronline: '$methodDefault'
 
 notifynut_subjectDefault: "$HOSTNAME UPS event $argument on $ups@$server !"
 notifynut_bodyDefault: "UPS event $argument on $ups at $(date +'%d-%m-%y %H:%M:%S')"

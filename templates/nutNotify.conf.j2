@@ -44,3 +44,15 @@ pushoverAppToken='{{notifynut_pushover_appToken if notifynut_pushover_appToken i
 pushoverUserkey='{{notifynut_pushover_userkey if notifynut_pushover_appToken is defined}}'
 pushoverSubject="{{notifynut_pushover_subject}}"
 pushoverMessage="$bodyDefault"						#body message sent by Pushover
+
+# methods to use on event (array to multi alert)
+#   can be mail, telegram, pushober, pushbullet, sms
+#   or an array like '(telegram mail)' for multiple methods
+methodDefault={{notifynut_method}}         
+methodOnline={{notifynut_method_online}}
+methodOnbatt={{notifynut_method_onbatt}}
+methodLowbatt={{notifynut_method_lowbatt}}
+methodFsd={{notifynut_method_fsd}}
+methodShutdown={{notifynut_method_shutdown}}
+methodComm={{notifynut_method_comm}}
+methodServerOnline={{notifynut_method_serveronline}}

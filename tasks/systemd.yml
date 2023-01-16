@@ -7,9 +7,9 @@
     mode: 0644
   notify: reload systemd for nut-notify-boot
 
-- name: replace default notifynut_method
+- name: replace default method
   lineinfile:
     dest: /lib/systemd/system/nut-notify-boot.service
     regexp: "^ExecStart"
-    line: ExecStart=/usr/local/bin/nutNotifyBoot.sh {{notifynut_method}}
+    line: ExecStart=/usr/local/bin/nutNotifyBoot.sh {{notifynut_method_serveronline}}
   notify: reload systemd for nut-notify-boot
