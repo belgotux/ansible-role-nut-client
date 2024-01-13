@@ -17,7 +17,8 @@ The role can work as it with the [default configuration](defaults/main.yml).
 ## Needed
 - `notifynut_method` can be [mail|pushbullet|telegram|pushover|sms] (default `mail`)
 - `notifynut_mailto` mail adresse or alias to send notification (default root)
-- `nut_mode` can be [netclient|netserver] netserver is for the server that is attach to UPS by USB for IP card (default netclient)
+- `nut_mode` can be [netclient|netserver] netserver is for the server that is attached to UPS by USB for IP card (default netclient)
+- `nut_type` can be [slave|master]. Master when the server is attached to UPS by USB. Slave when the server need to connect to another server (default master)
 - `nut_ups_name` your ups name
 - `nut_ups_ip` your ups server ip
 - `nut_ups_port` nut port  (default 3493)
@@ -73,6 +74,7 @@ Example Playbook
     - role: nut-client
       vars:
         nut_mode: netclient
+        nut_type: slave
         notifynut_method: pushbullet
         notifynut_pushbullet_accessToken: o.xxxxx
         #if you don't want notification from clients i.e.

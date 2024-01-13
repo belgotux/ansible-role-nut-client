@@ -1,6 +1,6 @@
 RUN_AS_USER nut
 
-MONITOR {{nut_ups_name}}@{{nut_ups_ip}}:{{nut_ups_port}} 1 {{nut_user}} {{nut_password}} master
+MONITOR {{ nut_ups_name }}@{{ nut_ups_ip }}:{{ nut_ups_port }} 1 {{ nut_user }} {{ nut_password }} {{ nut_type }}
 
 
 NOTIFYCMD /usr/local/bin/nutNotify.sh
