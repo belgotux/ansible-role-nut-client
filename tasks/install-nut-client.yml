@@ -3,7 +3,7 @@
     pkg:
       - nut-client
     state: latest
-    update_cache: yes
+    update_cache: true
 - name: change nut mode
   lineinfile:
     path: /etc/nut/nut.conf
